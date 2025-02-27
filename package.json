@@ -1,6 +1,6 @@
 {
   "name": "@araxiaonline/mpq-tools-osx",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Node.js wrapper for MPQ archive manipulation for MacOSX using mpqcli",
   "main": "lib/index.js",
   "scripts": {
