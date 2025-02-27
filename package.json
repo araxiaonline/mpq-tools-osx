@@ -1,0 +1,46 @@
+{
+  "name": "@araxiaonline/mpq-tools-osx",
+  "version": "1.0.0",
+  "description": "Node.js wrapper for MPQ archive manipulation for MacOSX using mpqcli",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node scripts/build.js",
+    "prepare": "npm run build",
+    "install": "node scripts/build.js",
+    "postinstall": "cd mpqcli && cmake -B build && cmake --build build",
+    "publish": "npm publish --access public"
+  },
+  "keywords": [
+    "mpq",
+    "wow",
+    "warcraft",
+    "archive",
+    "stormlib"
+  ],
+  "author": "ben-of-codecraft",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/araxiaonline/mpq-tools-osx"
+  },
+  "files": [
+    "lib/",
+    "bin/",
+    "mpqcli/",
+    "scripts/",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ]
+}
