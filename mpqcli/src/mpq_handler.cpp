@@ -63,14 +63,15 @@ void MPQHandler::extractFile(const std::string& filePath) {
     SFileCloseArchive(hMpq);
 }
 
-void MPQHandler::addFile(const std::string& filePath) {
+void MPQHandler::addFile(const std::string& filePath, const std::string& targetPath) {
     HANDLE hMpq = NULL;
     if (!SFileOpenArchive(mpqPath.c_str(), 0, 0, &hMpq)) {
         std::cerr << "Failed to open MPQ file" << std::endl;
         return;
     }
 
-    if (!SFileAddFileEx(hMpq, filePath.c_str(), filePath.c_str(), 
+    const char* archivePath = targetPath.empty() ? filePath.c_str() : targetPath.c_str();
+    if (!SFileAddFileEx(hMpq, filePath.c_str(), archivePath, 
                        MPQ_FILE_COMPRESS | MPQ_FILE_REPLACEEXISTING,
                        MPQ_COMPRESSION_ZLIB, MPQ_COMPRESSION_NEXT_SAME)) {
         std::cerr << "Failed to add file to MPQ" << std::endl;
