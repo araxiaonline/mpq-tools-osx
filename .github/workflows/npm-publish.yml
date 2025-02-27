@@ -34,6 +34,6 @@ jobs:
           scope: '@araxiaonline'
       - run: npm ci
       - run: npm run build
-      - run: npm publish --access public
+      - run: npm publish --ignore-scripts --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
