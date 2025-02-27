@@ -15,7 +15,6 @@ jobs:
         with:
           fetch-depth: 0
           ref: main
-          submodules: recursive
       
       - name: Get version from tag
         id: get_version
@@ -45,8 +44,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: recursive
       - uses: actions/setup-node@v4
         with:
           node-version: '18.x'
