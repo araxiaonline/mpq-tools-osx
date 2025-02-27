@@ -47,6 +47,7 @@ mpq.createArchive('directory/to/archive', 2); // version 2 MPQ
 Create a new MPQTool instance.
 
 Options:
+
 - `mpqcliPath`: Optional path to the mpqcli executable. By default, it uses the bundled version.
 
 ### `listFiles(mpqFile)`
@@ -90,8 +91,9 @@ Create a new MPQ archive from a directory.
 - Returns: true if successful
 
 ### Example command line command
+
 ```bash
-$ node -e "const MPQTool = require('./lib'); const mpq = new MPQTool(); mpq.addFile('patch-C.MPQ', 'test.txt', 'custom/test.txt');"
+node -e "const MPQTool = require('./lib'); const mpq = new MPQTool(); mpq.addFile('patch-C.MPQ', 'test.txt', 'custom/test.txt');"
 ```
 
 ## License
