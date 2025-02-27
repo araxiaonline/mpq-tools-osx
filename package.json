@@ -9,6 +9,9 @@
     "prepare": "npm run build",
     "install": "node scripts/build.js",
     "postinstall": "cd mpqcli && cmake -B build && cmake --build build",
+    "release:patch": "npm version patch && git push && git push --tags",
+    "release:minor": "npm version minor && git push && git push --tags",
+    "release:major": "npm version major && git push && git push --tags",
     "publish": "npm publish --access public"
   },
   "keywords": [
