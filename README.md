@@ -82,13 +82,26 @@ Extract all files from an MPQ archive.
 - `outputDir`: Optional output directory
 - Returns: true if successful
 
-### `createArchive(directory, version)`
+### `createArchive(directory, version, outputPath, options)`
 
 Create a new MPQ archive from a directory.
 
 - `directory`: Directory to create MPQ from
 - `version`: MPQ version (1 or 2, default: 2)
-- Returns: true if successful
+- `outputPath`: Optional path for the MPQ file. If not provided, creates it next to the directory
+- `options`: Additional options object:
+  - `addFiles`: If true, automatically adds all files from the directory to the archive (default: false)
+- Returns: Path to the created MPQ file
+
+Example:
+```javascript
+// Create MPQ and automatically add all files from the directory
+const mpqPath = mpq.createArchive('directory/to/archive', 2, 'output.mpq', { addFiles: true });
+console.log(`Created and populated MPQ at: ${mpqPath}`);
+
+// Create empty MPQ (traditional way)
+const emptyMpqPath = mpq.createArchive('directory/to/archive', 2);
+```
 
 ### Example command line command
 
